@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+<!--    <link href="css/main.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="{%static 'main.css'%}">
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+  </head>
+  <body>
+    <div class="s01">
+      <form>
+        <fieldset>
+          <legend align="center">Navia Life Care</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field second-wrap">
+            <select id="search_category">
+              <option value="search_options">Search Options</option>
+              <option value="all">All</option>
+              <option value="product_name">Name</option>
+              <option value="manufacturer_name">Manufacturer</option>
+              <option value="salt_name">Salt</option>
+            </select>
+          </div>
+          <div class="input-field first-wrap">
+            <input id="search" type="text" placeholder="What are you looking for?"/>
+          </div>
+
+          <div class="input-field third-wrap">
+            <button class="btn-search" type="button" id="submit-btn">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="replaceable-content" class="col-6">
+      {% include 'navia_home/medicines-results-partial.html' %}
+	</div>
+
+  {% block footer %}
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+  {% endblock %}
+  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

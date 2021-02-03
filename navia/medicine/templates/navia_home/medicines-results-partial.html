@@ -1,0 +1,35 @@
+{% if medicines %}
+    <table width="100%" cellpadding=5 cellspacing="0" align=center table-layout=fixed style="border-radius: 1px; border-color: #00000; box-shadow: 1px 1px;" border="2">
+        <tr>
+            <th>Name</th>
+            <th>Strength</th>
+            <th>Manufacturer</th>
+            <th>Price</th>
+            <th>Price Per Unit</th>
+            <th>Salt</th>
+            <th>Pack Size</th>
+        </tr>
+
+        {% for medicine in medicines %}
+        <tr>
+            <td>{{medicine.sku_name}}</td>
+            <td>{{medicine.strength}}</td>
+            <td>{{medicine.manufacturer_name}}</td>
+            <td>{{medicine.price}}</td>
+            <td>{{medicine.price_per_unit}}</td>
+            <td>{{medicine.salt_name}}</td>
+            <td>{{medicine.pack_size}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<!--        {% for artist in artists %}-->
+<!--        <li>{{ artist.sku_name }}</li>-->
+<!--        {% endfor %}-->
+<!--    </ul>-->
+{% else %}
+    <table width="100%">
+        <tr>
+            <td align="center"><b>No Medicines found with given details.</b></td>
+        </tr>
+    </table>
+{% endif %}
